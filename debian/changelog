@@ -1,3 +1,9 @@
+curl (7.43.0-1ubuntu1+rg1) trusty; urgency=medium
+
+  * Rebuild for trusty
+
+ -- Michael Renner <michael.renner@amd.co.at>  Wed, 08 Jul 2015 17:18:19 +0200
+
 curl (7.43.0-1ubuntu1) wily; urgency=medium
 
   * Merge from Debian. Remaining changes:
