@@ -3548,11 +3548,11 @@ sub singletest {
     # run the command line we built
     if ($torture) {
         $cmdres = torture($CMDLINE,
-                       "libtool --mode=execute gdb --directory libtest $DBGCURL -x $LOGDIR/gdbcmd");
+                       "$gdb --directory libtest $DBGCURL -x $LOGDIR/gdbcmd");
     }
     elsif($gdbthis) {
         my $GDBW = ($gdbxwin) ? "-w" : "";
-        runclient("libtool --mode=execute gdb --directory libtest $DBGCURL -x $LOGDIR/gdbcmd");
+        runclient("$gdb --directory libtest $DBGCURL $GDBW -x $LOGDIR/gdbcmd");
         $cmdres=0; # makes it always continue after a debugged run
     }
     else {
@@ -3586,7 +3586,7 @@ sub singletest {
             open(GDBCMD, ">$LOGDIR/gdbcmd2");
             print GDBCMD "bt\n";
             close(GDBCMD);
-            runclient("libtool --mode=execute gdb --directory libtest -x $LOGDIR/gdbcmd2 -batch $DBGCURL core ");
+            runclient("$gdb --directory libtest -x $LOGDIR/gdbcmd2 -batch $DBGCURL core ");
      #       unlink("$LOGDIR/gdbcmd2");
         }
     }

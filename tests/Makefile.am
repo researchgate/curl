@@ -57,7 +57,7 @@ curl:
 if CROSSCOMPILING
 TEST = @echo "NOTICE: we can't run the tests when cross-compiling!"
 else # if not cross-compiling:
-TEST = srcdir=$(srcdir) $(PERL) $(PERLFLAGS) $(srcdir)/runtests.pl -n
+TEST = srcdir=$(srcdir) $(PERL) $(PERLFLAGS) $(srcdir)/runtests.pl
 TEST_Q = -a -s
 TEST_AM = -a -am
 TEST_F = -a -p -r
